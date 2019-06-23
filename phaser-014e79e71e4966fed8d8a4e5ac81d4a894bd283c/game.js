@@ -16,12 +16,17 @@ var winningScore = 100;
 function addItems() {
   items = game.add.physicsGroup();
   createItem(375, 400, 'coin');
+  createItem(75, 275, 'coin');
 }
 
 // add platforms to the game
 function addPlatforms() {
   platforms = game.add.physicsGroup();
-  platforms.create(450, 550, 'platform');
+  platforms.create(550, 450, 'platform');
+  platforms.create(660, 450, 'platform');
+  platforms.create(0, 350, 'platform');
+  platforms.create(300, 200, 'platform');
+  platforms.create(550, 350, 'platform');
   platforms.setAll('body.immovable', true);
 }
 
@@ -59,8 +64,8 @@ function badgeHandler(player, badge) {
 window.onload = function () {
   game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update, render: render });
   
-  // before the game begins
-  function preload() {
+  // before the game bplayer
+  function preload() {player
     game.stage.backgroundColor = '#5db1ad';
     
     //Load images
@@ -119,7 +124,7 @@ window.onload = function () {
     if (jumpButton.isDown && (player.body.onFloor() || player.body.touching.down)) {
       player.body.velocity.y = -400;
     }
-    // when the player winw the game
+    // when the player win the game
     if (won) {
       winningMessage.text = "YOU WIN!!!";
     }
