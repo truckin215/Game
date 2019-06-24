@@ -10,13 +10,16 @@ var text;
 var winningMessage;
 var won = false;
 var currentScore = 0;
-var winningScore = 100;
+var winningScore = 50;
 
 // add collectable items to the game
 function addItems() {
   items = game.add.physicsGroup();
-  createItem(375, 400, 'coin');
-  createItem(75, 275, 'coin');
+  createItem(350, 300, 'coin');
+  createItem(675, 375, 'coin');
+  createItem(475, 140, 'coin');
+  createItem(700,50, 'coin');
+  createItem(75, 240, 'coin');
 }
 
 // add platforms to the game
@@ -24,10 +27,10 @@ function addPlatforms() {
   platforms = game.add.physicsGroup();
   platforms.create(550, 450, 'platform');
   platforms.create(660, 450, 'platform');
-  platforms.create(0, 350, 'platform');
-  platforms.create(300, 200, 'platform');
-  platforms.create(550, 350, 'platform');
+  platforms.create(0, 300, 'platform');
+  platforms.create(660, 150, 'platform');
   platforms.setAll('body.immovable', true);
+  platforms.create(770, 300, 'platform')
 }
 
 // create a single animated item and add to screen
